@@ -8,6 +8,12 @@
     font-family: "Roboto Mono", monospace;
 }
 
+body{
+    background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 header{
     position: fixed;
     right: 0;
@@ -17,24 +23,31 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 4rem;
+    padding: 1.5rem 9.5rem;
     background-color: transparent;
 }
 
 .logo{
-    font-size: 26px;
+    font-size: 19px;
     font-weight: 800;
-    color: black;
+    color: #ececec;
     text-decoration: none;
+    position: absolute;  
+    left: 60px;         
+    top: 25px;
 }
 
 .nav-list{
     display: flex;
+    position: absolute;  
+        right: 60px;         
+        top: 25px;
 }
 
 .nav-list a {
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    margin-top: 1rem;
+    color: #ececec;
     margin-left: 3rem;
     font-size: 15px;
     font-weight: 600;
@@ -43,7 +56,7 @@ header{
 }
 
 .nav-list a:hover {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #ececec;
 }
 
 .abrir-menu,
@@ -51,18 +64,127 @@ header{
     display: none;
 }
 
-@media screen and (max-width: 550px) {
+.hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    color: #ececec;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+section{
+    padding: 0 8%;
+}
+
+.hero-text h5 {
+    
+    top: 50%;
+    font-size: 14px;
+    font-weight: 400;
+    
+}
+
+
+.hero-text h1 {
+    font-size: 100px;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+
+.console-container {
+    font-size: 4em;
+    text-align: start;
+    height: 200px;
+    width: 600px;
+    position: relative;
+    display: block;
+    color: white;
+    margin-left: 0; 
+    margin-right: auto;
+}
+
+
+.console-underscore {
+    display: inline-block;
+    position: relative;
+    top: -0.14em;
+    left: 5px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.hero-text p {
+    max-width: 48rem;
+    font-size: 80%;
+    font-weight: 400;
+    color: #ecececc2;
+    
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+
+}
+
+.scroll-down i {
+    display: block;
+    padding: 12px;
+    font-size: 40px;
+    color: #21383d;
+    transition: all .5s ease;
+}
+
+.scroll-down i:hover {
+    transform: translateY(5px);
+    color: #ececec;
+}
+
+@media screen and (max-width: 789px) {
+    
+
+
+    .logo{
+        display: block;
+        border: 0;
+        font-size: 1.4rem;
+        background-color: transparent;
+        cursor: pointer;
+        position: absolute;  
+        left: 60px;         
+        top: 10px;   
+    }
+    
     .abrir-menu,
-    .cerrar-menu{
+    .cerrar-menu {
+    display: block;
+    border: 0;
+    font-size: 1.5rem;
+    background-color: transparent;
+    cursor: pointer;
+    position: absolute;  
+    right: 60px;        
+    top: 10px;           
+}
+
+
+    
+    .abrir-menu{
         display: block;
         border: 0;
         font-size: 1.5rem;
-        background-color: transparent;
+        color: #ececec;
         cursor: pointer;
-    }
-
-    .abrir-menu{
-        color: #1c1c1c;
+        position: absolute;  
+        right: 60px;        
+        top: 10px;           
     }
 
     .cerrar-menu{
@@ -74,37 +196,45 @@ header{
     }
 
     .nav {
-        opacity: 0;
-        visibility: hidden;
-        height: 100vh;
         display: flex;
+        position: fixed; /* Elimina 'absolute' */
         flex-direction: column;
-        align-items: end;
+        align-items: flex-end; /* Corrige 'end' */
         gap: 1rem;
-        position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
-        background-color: #1c1c1c;
-        padding: 2rem;
-        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+        width: 300px; /* Ajusta según el tamaño deseado */
+        background-color: #01090ac0;
+        padding: 3rem;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.719);
+        
+        /* Mejora la animación */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     }
-
     
-
+    /* ✅ Clase para mostrar el menú */
     .nav.visible {
         opacity: 1;
         visibility: visible;
+        transform: translateX(0);
     }
     
-    .nav-list{
+    .nav-list {
+        display: flex; /* Asegura flexbox */
         flex-direction: column;
-        align-items: end;
-        
+        align-items: flex-end; /* Corrige 'end' */
+        padding: 2rem;
+        gap: 1rem;
     }
-
+    
     .nav-list li a {
         color: white;
-        
+        font-size: 2rem;
+        padding-top: 2rem;
     }
+    
 }
