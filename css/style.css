@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Liter&family=Lobster&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Shanti&display=swap');
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -8,13 +8,13 @@
     font-family: "Roboto Mono", monospace;
 }
 
-body{
+body {
     background: linear-gradient(245.59deg, #31494e 0%, #385e70 25%, #131313 75%);
     background-attachment: fixed;
     background-size: cover;
 }
 
-header{
+header {
     position: fixed;
     right: 0;
     top: 0;
@@ -23,34 +23,34 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 9.5rem;
+    padding: 1.5rem 5vw;
     background-color: transparent;
 }
 
-.logo{
-    font-size: 19px;
+
+.logo {
+    font-size: 1.2rem;
     font-weight: 800;
     color: #ececec;
     text-decoration: none;
-    position: absolute;  
-    left: 60px;         
-    top: 25px;
+    position: absolute;
+    left: 5%;
+    top: 15px;
 }
 
-.nav-list{
+.nav-list {
     display: flex;
-    position: absolute;  
-        right: 60px;         
-        top: 25px;
+    position: absolute;
+    right: 5%;
+    top: 15px;
 }
 
 .nav-list a {
     text-decoration: none;
-    margin-top: 1rem;
     color: #ececec;
-    margin-left: 3rem;
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: 600;
+    margin-left: 2rem;
     border-bottom: 2px solid transparent;
     transition: all .5s ease;
 }
@@ -62,9 +62,17 @@ header{
 .abrir-menu,
 .cerrar-menu {
     display: none;
+    border: 0;
+    font-size: 2rem;
+    background-color: transparent;
+    color: #ececec;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    top: 15px;
 }
 
-.hero{
+.hero {
     height: 100%;
     width: 100%;
     min-height: 100vh;
@@ -76,37 +84,35 @@ header{
     gap: 0.5rem;
 }
 
-section{
+section {
     padding: 0 8%;
 }
 
 .hero-text h5 {
-    
     top: 50%;
     font-size: 14px;
     font-weight: 400;
-    
 }
 
-
 .hero-text h1 {
-    font-size: 100px;
+    font-size: clamp(40px, 5vw, 100px);
     line-height: 1;
     margin: 0 0 30px;
 }
 
 .console-container {
-    font-size: 4em;
+    font-size: 3em;
+    padding: 1rem;
     text-align: start;
     height: 200px;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     position: relative;
     display: block;
     color: white;
-    margin-left: 0; 
+    margin-left: 0;
     margin-right: auto;
 }
-
 
 .console-underscore {
     display: inline-block;
@@ -120,25 +126,27 @@ section{
 }
 
 .hero-text p {
+    display: flex;
     max-width: 48rem;
     font-size: 80%;
     font-weight: 400;
     color: #ecececc2;
-    
+    padding: 1rem;
+    text-align: left;
 }
+
 
 .scroll-down {
     position: absolute;
     bottom: 6%;
     right: 3%;
-
 }
 
 .scroll-down i {
     display: block;
     padding: 12px;
     font-size: 40px;
-    color: #21383d;
+    color: #ececec;
     transition: all .5s ease;
 }
 
@@ -147,94 +155,116 @@ section{
     color: #ececec;
 }
 
-@media screen and (max-width: 789px) {
-    
-
-
-    .logo{
-        display: block;
-        border: 0;
-        font-size: 1.4rem;
-        background-color: transparent;
-        cursor: pointer;
-        position: absolute;  
-        left: 60px;         
-        top: 10px;   
+@media screen and (max-width: 710px) {
+    header {
+        padding: 1rem 2rem;
     }
-    
+
+    .logo {
+        font-size: 1.2rem;
+        left: 10px;
+        top: 10px;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
     .abrir-menu,
     .cerrar-menu {
-    display: block;
-    border: 0;
-    font-size: 1.5rem;
-    background-color: transparent;
-    cursor: pointer;
-    position: absolute;  
-    right: 60px;        
-    top: 10px;           
-}
-
-
-    
-    .abrir-menu{
         display: block;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .abrir-menu,
+    .cerrar-menu {
+        display: flex;
         border: 0;
         font-size: 1.5rem;
         color: #ececec;
+        background-color: transparent;
         cursor: pointer;
-        position: absolute;  
-        right: 60px;        
-        top: 10px;           
+        position: absolute;
+        right: 60px;
+        top: 10px;
     }
 
-    .cerrar-menu{
-        color: #ececec;
-    }
-
-    .nav{
+    .nav {
         display: none;
     }
 
     .nav {
         display: flex;
-        position: fixed; /* Elimina 'absolute' */
+        position: fixed;
         flex-direction: column;
-        align-items: flex-end; /* Corrige 'end' */
+        align-items: flex-end;
         gap: 1rem;
         top: 0;
         right: 0;
         bottom: 0;
-        width: 300px; /* Ajusta según el tamaño deseado */
+        width: 300px;
         background-color: #01090ac0;
         padding: 3rem;
         box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.719);
-        
-        /* Mejora la animación */
         opacity: 0;
         visibility: hidden;
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     }
-    
-    /* ✅ Clase para mostrar el menú */
+
     .nav.visible {
         opacity: 1;
         visibility: visible;
         transform: translateX(0);
     }
-    
+
     .nav-list {
-        display: flex; /* Asegura flexbox */
+        display: flex;
         flex-direction: column;
-        align-items: flex-end; /* Corrige 'end' */
+        align-items: flex-end;
         padding: 2rem;
         gap: 1rem;
+        padding: 3rem;
     }
-    
+
     .nav-list li a {
         color: white;
-        font-size: 2rem;
+        font-size: 1rem;
         padding-top: 2rem;
     }
-    
 }
+
+@media (max-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 50px;
+    }
+
+    section {
+        padding: 0 5%;
+    }
+
+    .nav {
+        width: 100%;
+        max-width: 300px;
+        padding: 2rem;
+    }
+
+    .nav-list {
+        align-items: center;
+    }
+
+    .scroll-down {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+
